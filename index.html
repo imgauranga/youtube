@@ -1,11 +1,12 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>    
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>YouTube</title>    
-    <meta name="theme-color" content="#351E21"/>    
+    <meta name="theme-color" content="#434462"/>    
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>    
     <link href='https://i.ibb.co/b52pjVWp/IMG-20260403-210738-880.webp' rel='icon' type='image/x-icon'/>    
     <link href='https://i.ibb.co/b52pjVWp/IMG-20260403-210738-880.webp' rel='shortcut icon' type='image/x-icon'/>    
@@ -13,8 +14,7 @@
     <style>        
         :root {            
             --primary: #ff4757;            
-            --bg-gradient:
-        linear-gradient(15deg, #111111, #18181c, #000000);
+            --bg-gradient:#181925;
              --card-bg: rgba(255, 255, 255, 0.06);            
             --text-main: #ffffff;            
             --text-muted: #eeeeee;            
@@ -26,7 +26,7 @@
             box-sizing: border-box;            
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;        
         }
-        html, body {            
+        html, body {border-top:0.1px solid #181925;          
             height: 100%;            
             width: 100%;            
             margin: 0;            
@@ -50,47 +50,29 @@
             height: 0px !important;             
             background: transparent !important;         
         } 
-        body {   border-top :0.1px solid #222222;  
+        body {
             background: var(--bg-gradient); text-align : center ;                    
             align-items: center;            
             color: var(--text-main);        
         }
-        .blur-bg {            
-            position: absolute;            
-            width: 280px;            
-            height: 280px;            
-            background: var(--primary);            
-            filter: blur(150px);            
-            border-radius: 50%;            
-            z-index: 0;            
-            opacity: 0.3;            
-            animation: float 6s ease-in-out infinite;        
-        }
-        @keyframes float {            
-            0%, 100% { transform: translate(0, 0); }            
-            50% { transform: translate(50px, 30px); }        
-        }
-        .player-container { margin-top:25px;         
+        .player-container { margin-top:27px;       
             position: relative;            
             z-index: 1;            
-            background: var(--card-bg);            
-            backdrop-filter: blur(20px);            
-            -webkit-backdrop-filter: blur(20px);            
-            border-top: 2px solid rgba(255, 255, 255, 0.1); 
-            border-right: 1px solid rgba(255, 255, 255, 0.1);            
-            padding: 20px;            
-            border-radius:3px;            
+            background:#252636;            
+            padding: 52px 20px;            
+            border-radius:11px;            
             width: 380px;            
             max-width: 90%;            
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);            
             text-align: center;        
-        }
+       border:1px solid #434462;
+ }
         .video-wrapper {            
             position: relative;            
             width: 100%;            
             padding-bottom: 56.25%;            
             height: 0;            
-            margin-bottom: 25px;            
+            margin-bottom: 10px;            
             border-radius: 14px;            
             overflow: hidden;            
             box-shadow: 0 10px 25px rgba(0,0,0,0.4);            
@@ -122,7 +104,7 @@
         .progress-bar {            
             height: 100%;            
             width: 0%;            
-            background: var(--primary);            
+            background: #434462;            
             border-radius: 3px;            
             position: relative;            
             transition: width 0.1s linear;        
@@ -197,7 +179,7 @@
             backdrop-filter: blur(20px);            
             display: flex;            
             justify-content: center;            
-            align-items: center;            
+            align-items: flex-start;            
             z-index: 100;            
             opacity: 0;            
             pointer-events: none;            
@@ -209,11 +191,11 @@
         }
         .modal-content {            
             background: var(--popup-bg);            
-            border: 1px solid rgba(255, 255, 255, 0.1);            
+            border: 1px solid #434462;            
             width: 90%;            
             max-width: 450px;            
             height: 80vh;            
-            border-radius:24px 0px;            
+            border-radius:24px 0px;            margin-top:30px;
             padding: 25px;            
             display: flex;            
             flex-direction: column;            
@@ -243,11 +225,12 @@
         .close-btn {            
             background: none;            
             border: none;            
-            color: var(--text-muted);            
+            color:#ffffff!important;            
             font-size: 1.4rem;            
             cursor: pointer;        
-        }
-        .close-btn:hover {            
+ }
+ 
+      .close-btn:hover {            
             color:var(--text-muted);        
         }
         /* Search Input Style */
@@ -272,7 +255,7 @@
             width: 6px;        
         }          
         .video-list::-webkit-scrollbar-thumb {            
-            background: rgba(255, 255, 255, 0.2);            
+            background: rgba(255, 255, 255, 0.9);            
             border-radius: 3px;        
         }
         .video-item {            
@@ -287,11 +270,11 @@
             border: 1px solid transparent;        
         }
         .video-item:hover {            
-            background: rgba(255, 255, 255, 0.05);        
+            background: rgba(67, 68, 98, 0.25);        
         }
         .video-item.active {            
-            background: rgba(255, 71, 87, 0.15);            
-            border-color: rgba(255, 71, 87, 0.3);        
+            background: rgba(67, 68, 98,0.25);            
+            border-color: rgba(67, 68, 98, 1);        
         }
         .video-thumb {
             width: 80px;
@@ -347,16 +330,16 @@
              color: #fff;             
              border-color: transparent;        
         }        
-        .sup{background:#333333;position: absolute;height :30px; width:30px;border-radius:50px;font-size:24px;color:#888888;
+        .sup{background:#434462;position: absolute;height :30px; width:30px;border-radius:50px;font-size:25px;color:#888888;
         box-shadow: 1px -4px 4px rgba(0,0,0,0.6); opacity:0.9;}
-#sub{right:8px; top:8px; }             #sub1{left:8px; top:8px; }
-#sub2{right:8px; bottom:8px; }
-#sub3{left:8px; bottom:8px; }
+#sub{right:25px; top:25px; }             #sub1{left:25px; top:25px; }
+#sub2{right:25px; bottom:25px; }
+#sub3{left:25px; bottom:25px; }
   .track-item { display:none; }   
 
   .player-bar {margin :25px 0px;            
-             background-color: #222222;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='422' height='422' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke-opacity='0.35'%3E%3Cg stroke='%23026' stroke-width='17'%3E%3Cline x1='-8' y1='-8' x2='808' y2='808'/%3E%3Cline x1='-8' y1='792' x2='808' y2='1608'/%3E%3Cline x1='-8' y1='-808' x2='808' y2='8'/%3E%3C/g%3E%3Cg stroke='%23002163' stroke-width='16'%3E%3Cline x1='-8' y1='767' x2='808' y2='1583'/%3E%3Cline x1='-8' y1='17' x2='808' y2='833'/%3E%3Cline x1='-8' y1='-33' x2='808' y2='783'/%3E%3Cline x1='-8' y1='-783' x2='808' y2='33'/%3E%3C/g%3E%3Cg stroke='%23002060' stroke-width='15'%3E%3Cline x1='-8' y1='742' x2='808' y2='1558'/%3E%3Cline x1='-8' y1='42' x2='808' y2='858'/%3E%3Cline x1='-8' y1='-58' x2='808' y2='758'/%3E%3Cline x1='-8' y1='-758' x2='808' y2='58'/%3E%3C/g%3E%3Cg stroke='%23001f5c' stroke-width='14'%3E%3Cline x1='-8' y1='67' x2='808' y2='883'/%3E%3Cline x1='-8' y1='717' x2='808' y2='1533'/%3E%3Cline x1='-8' y1='-733' x2='808' y2='83'/%3E%3Cline x1='-8' y1='-83' x2='808' y2='733'/%3E%3C/g%3E%3Cg stroke='%23001e59' stroke-width='13'%3E%3Cline x1='-8' y1='92' x2='808' y2='908'/%3E%3Cline x1='-8' y1='692' x2='808' y2='1508'/%3E%3Cline x1='-8' y1='-108' x2='808' y2='708'/%3E%3Cline x1='-8' y1='-708' x2='808' y2='108'/%3E%3C/g%3E%3Cg stroke='%23001d56' stroke-width='12'%3E%3Cline x1='-8' y1='667' x2='808' y2='1483'/%3E%3Cline x1='-8' y1='117' x2='808' y2='933'/%3E%3Cline x1='-8' y1='-133' x2='808' y2='683'/%3E%3Cline x1='-8' y1='-683' x2='808' y2='133'/%3E%3C/g%3E%3Cg stroke='%23001c53' stroke-width='11'%3E%3Cline x1='-8' y1='642' x2='808' y2='1458'/%3E%3Cline x1='-8' y1='142' x2='808' y2='958'/%3E%3Cline x1='-8' y1='-158' x2='808' y2='658'/%3E%3Cline x1='-8' y1='-658' x2='808' y2='158'/%3E%3C/g%3E%3Cg stroke='%23001b4f' stroke-width='10'%3E%3Cline x1='-8' y1='167' x2='808' y2='983'/%3E%3Cline x1='-8' y1='617' x2='808' y2='1433'/%3E%3Cline x1='-8' y1='-633' x2='808' y2='183'/%3E%3Cline x1='-8' y1='-183' x2='808' y2='633'/%3E%3C/g%3E%3Cg stroke='%23001a4c' stroke-width='9'%3E%3Cline x1='-8' y1='592' x2='808' y2='1408'/%3E%3Cline x1='-8' y1='192' x2='808' y2='1008'/%3E%3Cline x1='-8' y1='-608' x2='808' y2='208'/%3E%3Cline x1='-8' y1='-208' x2='808' y2='608'/%3E%3C/g%3E%3Cg stroke='%23001949' stroke-width='8'%3E%3Cline x1='-8' y1='567' x2='808' y2='1383'/%3E%3Cline x1='-8' y1='217' x2='808' y2='1033'/%3E%3Cline x1='-8' y1='-233' x2='808' y2='583'/%3E%3Cline x1='-8' y1='-583' x2='808' y2='233'/%3E%3C/g%3E%3Cg stroke='%23001846' stroke-width='7'%3E%3Cline x1='-8' y1='242' x2='808' y2='1058'/%3E%3Cline x1='-8' y1='542' x2='808' y2='1358'/%3E%3Cline x1='-8' y1='-558' x2='808' y2='258'/%3E%3Cline x1='-8' y1='-258' x2='808' y2='558'/%3E%3C/g%3E%3Cg stroke='%23001743' stroke-width='6'%3E%3Cline x1='-8' y1='267' x2='808' y2='1083'/%3E%3Cline x1='-8' y1='517' x2='808' y2='1333'/%3E%3Cline x1='-8' y1='-533' x2='808' y2='283'/%3E%3Cline x1='-8' y1='-283' x2='808' y2='533'/%3E%3C/g%3E%3Cg stroke='%2300163f' stroke-width='5'%3E%3Cline x1='-8' y1='292' x2='808' y2='1108'/%3E%3Cline x1='-8' y1='492' x2='808' y2='1308'/%3E%3Cline x1='-8' y1='-308' x2='808' y2='508'/%3E%3Cline x1='-8' y1='-508' x2='808' y2='308'/%3E%3C/g%3E%3Cg stroke='%2300153c' stroke-width='4'%3E%3Cline x1='-8' y1='467' x2='808' y2='1283'/%3E%3Cline x1='-8' y1='317' x2='808' y2='1133'/%3E%3Cline x1='-8' y1='-333' x2='808' y2='483'/%3E%3Cline x1='-8' y1='-483' x2='808' y2='333'/%3E%3C/g%3E%3Cg stroke='%23001439' stroke-width='3'%3E%3Cline x1='-8' y1='342' x2='808' y2='1158'/%3E%3Cline x1='-8' y1='442' x2='808' y2='1258'/%3E%3Cline x1='-8' y1='-458' x2='808' y2='358'/%3E%3Cline x1='-8' y1='-358' x2='808' y2='458'/%3E%3C/g%3E%3Cg stroke='%23001336' stroke-width='2'%3E%3Cline x1='-8' y1='367' x2='808' y2='1183'/%3E%3Cline x1='-8' y1='417' x2='808' y2='1233'/%3E%3Cline x1='-8' y1='-433' x2='808' y2='383'/%3E%3Cline x1='-8' y1='-383' x2='808' y2='433'/%3E%3C/g%3E%3Cg stroke='%23013' stroke-width='1'%3E%3Cline x1='-8' y1='392' x2='808' y2='1208'/%3E%3Cline x1='-8' y1='-408' x2='808' y2='408'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            
+background: linear-gradient(160deg, #434462 0%,  #252636 100%);
 background-attachment: fixed;          
             backdrop-filter: blur(20px);            
             -webkit-backdrop-filter: blur(20px);            
@@ -425,35 +408,47 @@ background-attachment: fixed;
     height: 58px;
     fill:#fefefe;
   }
-  
-
-
-
 
     </style>
 </head>
 <body>
+
+
+
+      <div id='lift1'></div>
     
-     
+    <div id='lift2'></div>
+<style>
+#lift1{
+
+    position: fixed;
+    top: 12%;
+    left:-12px;;
+border-radius:0px 20px 20px 0px;
+background: #02405e;
+background: linear-gradient(160deg, #434462 0%,  #252636 100%); z-index:9999;
+Height:60%;
+width:37px;
+}
+
+#lift2{
+    position: fixed;
+    top: 12%;
+    right:-9px;
+border-radius:20px 0px 0px 20px;
+background: #02405e;
+background: linear-gradient(160deg,#434462 0%, #252636 100%);z-index:9999;
+    
+    
+Height:60%;
+width:37px;
+}
+</style>   
         
     <center><div class="blur-bg"></div>  
         
     <div class="player-container" id="player-card"> 
-<div style="text-align: left; margin-bottom:30px! important;  padding: 8px 0px; margin :20px 0px;border-radius: 50px;      background: rgba(255, 255, 255, 0.03);            
-            border: 1px solid rgba(255, 255, 255, 0.05);        
-        ">            
-            <div class='profile-card'>                
-                <div class='social-icons'>                    
-                     <a class='icon facebook' href='https://facebook.com/imgauranga' target='_blank' title='facebook / X'><i class='fab fa-facebook'></i></a>     <a class='icon twitter' href='https://x.com/imgauranga' target='_blank' title='Twitter / X'><i class='fab fa-twitter'></i></a>                    
-                    <a class='icon instagram' href='https://instagram.com/imgauranga' target='_blank' title='Instagram'><i class='fab fa-instagram'></i></a>                    
-                    <a class='icon youtube' href='https://youtube.com/@imgauranga' target='_blank' title='YouTube'><i class='fab fa-youtube'></i></a>                
-                    <a class='icon website' href='https://sites.google.com/view/imgauranga' target='_blank' title='Website'><i class='fas fa-globe'></i></a>
-                </div>            
-            </div>        
-        </div>        
-        
-        
-       
+
     
 <div id="loader" class="loader">      
   <div class="spinner"></div> 
@@ -461,7 +456,7 @@ background-attachment: fixed;
 <div id="track-list"></div>  
 
 <div class="player-bar">    
-  <div class="player-info" id="current-track-title">Play Audio Short Update Speech</div>    
+  <div class="player-info" id="current-track-title">Today Morning Update Play Audio</div>    
   <div class="player-controls">      
     <button class="control-btn" onclick="playPrev()">⏮</button>      
     <button class="control-btn main-play" id="master-play-btn" onclick="togglePlayPause()">
@@ -471,11 +466,6 @@ background-attachment: fixed;
   </div>  
 </div>
  
-     
-        
-        
-        
-        
         <button class="btn btn-playlist" id="open-playlist-btn">            
             <i class="fas fa-list-ul"></i> View Video Playlist        
         </button>        
@@ -909,5 +899,71 @@ background-attachment: fixed;
   fetchBlogPosts();  
 </script>
     
+<style>
+    #heartContainer {
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 777;
+       filter: brightness(0) saturate(100%) invert(29%) sepia(13%) saturate(1636%) hue-rotate(196deg) brightness(93%) contrast(92%);
+ } 
+
+    .heart {
+        position: absolute;
+        font-size: 20px;
+        /* Animation duration ko thoda randomize karne se aur natural lagega */
+        animation: fly 4s linear forwards
+    }
+
+    @keyframes fly {
+        0% { transform: translateY(100vh) scale(0); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(100px) scale(5); opacity: 0; }
+ 
+        
+     }
+</style>
+
+<div id="heartContainer"></div>
+
+<script>
+    let lastTime = 0;
+
+    function createHeart() {
+        const container = document.getElementById('heartContainer');
+        if (!container) return;
+
+        const heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.className = 'heart';
+        
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+        
+        container.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }
+
+    // Tab switch issue fix karne ke liye logic
+    function animate(currentTime) {
+        // Agar gap 300ms se kam hai, toh mat banao (tab switch handle karne ke liye)
+        if (currentTime - lastTime > 400) {
+            createHeart();
+            lastTime = currentTime;
+        }
+        requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+</script>
+
+
 </body>
 </html>
